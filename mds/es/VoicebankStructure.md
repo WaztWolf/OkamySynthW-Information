@@ -95,7 +95,7 @@ transcription:
 
 `.osegment` ejemplo:
 ```
-fonema,nota_midi,relativepath,pitch_promedio,inicio,fin
+fonema,nota_midi,pitch_promedio,relativepath,inicio,fin
 h,G3,196.00,samples/hola.wav,0.000,0.120
 o,B3,246.50,samples/hola.wav,0.120,0.380
 l,A3,220.10,samples/hola.wav,0.380,0.470
