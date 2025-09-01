@@ -115,25 +115,7 @@ Sección `aveTable:` con líneas `Nombre Sufijo Color` genera vocales derivadas 
 
 ---
 
-## 4. Flujo de Trabajo
-1. Crear base de datos → genera diccionario + CSVs vacíos + config.  
-2. Añadir muestras (.wav + .otrans).  
-3. Segmentar → produce `.osegment` y añade filas a CSV del fonema si aplica.  
-4. Rebuild (opcional, destructivo) → limpia y recrea CSVs (pierde datos previos).  
-5. Interfaz refresca listas y estadísticas.
-
----
-
-## 5. Conteo de Fonemas en la UI
-`DatabaseService.GetPhonemeStatistics()`:
-- Escanea `phonetics_folder`.
-- Lee cada `phonetic_*.csv`.
-- Si detecta cabecera → cuenta = líneas - 1; si no, líneas.  
-- Crea objetos `Phoneme` (símbolo, tipo, count) mostrados en el panel.
-
----
-
-## 6. Ejemplo Mínimo
+## 4. Ejemplo Mínimo
 ```
 ovoice.cfg
 dictionary.dict
@@ -150,7 +132,7 @@ phonetics_folder/
 ```
 ---
 
-## 7. Recomendaciones Futuras
+## 5. Recomendaciones Futuras
 - Normalizador/migrador de cabeceras.  
 - `VOICEBANK_FORMAT_VERSION` en `ovoice.cfg`.  
 - Métricas extra: RMS, formantes, loudness.  
@@ -159,10 +141,10 @@ phonetics_folder/
 
 ---
 
-## 8. Extra: Archivos `.opit` y Refinamiento de Vocales
+## 6. Extra: Archivos `.opit` y Refinamiento de Vocales
 Esta sección documenta herramientas avanzadas opcionales que enriquecen el voicebank: extracción de características por frame (.opit) y refinamiento manual de segmentos vocálicos.
 
-### 8.1 Archivos `.opit`
+### 6.1 Archivos `.opit`
 Archivo JSON generado automáticamente para cada `*.wav` en `samples/`. Contiene características por frame (ventana deslizante) para análisis, síntesis o entrenamiento.
 
 Uso sugerido:
@@ -176,7 +158,7 @@ Sirve para re-segmentar mejor y encontrar la parte más estable de la vocal.
 
 ---
 
-## 9. Glosario
+## 7. Glosario
 | Término | Descripción |
 |---------|-------------|
 | ovoice.cfg | Archivo principal “cerebro” |
