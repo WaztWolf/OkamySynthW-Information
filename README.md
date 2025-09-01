@@ -3,4 +3,4 @@ Aqui se mostraran las explicaciones de funcionamiento de voicebanks y motor de s
 | Item | Archivo explicatorio |
 |-----------|-----------|
 | Modelo de Voicebank    | [Explicacion](mds/es/SynthesisEngine.md)    |
-| Modelo de Motor de Sintesis    | [Explicacion]()    |
+| Modelo de Motor de Sintesis    | [Explicacion](mds/es/VoicebankStructure.md)    |
