@@ -51,9 +51,9 @@ El método principal para sintetizar notas es `SynthesizeNote`. A continuación,
    - **Duración de la Nota**:
      - Se calcula la duración de la nota en segundos utilizando el tempo y los ticks.
    - **Transcripción de Fonemas**:
-     - Este paso ya se debe haber hecho automáticamente con el propio (`G2P`) (Grapheme To Phoneme).
+     - Este paso ya se debe haber hecho automáticamente con el propio `G2P` (Grapheme To Phoneme).
    - **Cálculo de Duración de Consonante y Vocal**:
-     - Este proceso es necesario ya que debe calcular la duración de la vocal: (`NoteDur`) - (`ConsonantDur`) = (`VowelDur`).
+     - Este proceso es necesario ya que debe calcular la duración de la vocal: `NoteDur` - `ConsonantDur` = `VowelDur`.
    - **Normalización de Audio de Consonante**:
      - El motor normaliza el segmento de audio para tener un sonido final más estable e igualado en términos de volumen.
    - **Procesamiento de Consonantes**:
