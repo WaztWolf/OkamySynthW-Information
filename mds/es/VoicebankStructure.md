@@ -1,4 +1,4 @@
-# Okamy Synth W DevKit – Formato de Voicebank
+# Okamy Voicebank(DB)
 Información sobre la estructura de un Okamy Voicebank.
 
 ---
