@@ -13,7 +13,7 @@ namespace OkamySynthW.Models
         [XmlElement("projectProperties")]
         public ProjectProperties FakeProperties
         {
-            get => new ProjectProperties { Tempo = this.Tempo, PPQ = this.PPQ, Singer = this.Singer, Beats = this.Beats, BeatsSubdivision = this.BeatsSubdivision, Numerator = this.Numerator, Denominator = this.Denominator };
+            get => new ProjectProperties { Tempo = this.Tempo, PPQ = this.PPQ, Singer = this.Singer, Beats = this.Beats, BeatsSubdivision = this.BeatsSubdivision, Numerator = this.Numerator, Denominator = this.Denominator, PitchPoints = this.PitchPoints, GenderPoints = this.GenderPoints, GrowlPoints = this.GrowlPoints, BreathinessPoints = this.BreathinessPoints };
             set
             {
                 this.Tempo = value.Tempo;
@@ -23,6 +23,10 @@ namespace OkamySynthW.Models
                 this.Denominator = value.Denominator;
                 this.Numerator = value.Numerator;
                 this.PPQ = value.PPQ;
+                this.PitchPoints = value.PitchPoints ?? new List<PitchPoint>();
+                this.GenderPoints = value.GenderPoints ?? new List<PitchPoint>();
+                this.GrowlPoints = value.GrowlPoints ?? new List<PitchPoint>();
+                this.BreathinessPoints = value.BreathinessPoints ?? new List<PitchPoint>();
             }
         }
 
@@ -43,6 +47,15 @@ namespace OkamySynthW.Models
         [XmlArray("PitchPoints")]
         [XmlArrayItem("PitchPointsData")]
         public List<PitchPoint> PitchPoints { get; set; } = new();
+        [XmlArray("GenderPoints")]
+        [XmlArrayItem("GenderPointsData")]
+        public List<PitchPoint> GenderPoints { get; set; } = new();
+        [XmlArray("GrowlPoints")]
+        [XmlArrayItem("GrowlPointsData")]
+        public List<PitchPoint> GrowlPoints { get; set; } = new();
+        [XmlArray("BreathinessPoints")]
+        [XmlArrayItem("BreathinessPointsData")]
+        public List<PitchPoint> BreathinessPoints { get; set; } = new();
         [XmlArray("Notes")]
         [XmlArrayItem("NoteData")]
         public List<NoteData> Notes { get; set; } = new();
@@ -70,6 +83,18 @@ namespace OkamySynthW.Models
 
         [XmlElement("PPQ")]
         public double PPQ { get; set; } = 480;
+
+        [XmlElement("PitchPoints")]
+        public List<PitchPoint> PitchPoints { get; set; } = new();
+
+        [XmlElement("GenderPoints")]
+        public List<PitchPoint> GenderPoints { get; set; } = new();
+
+        [XmlElement("GrowlPoints")]
+        public List<PitchPoint> GrowlPoints { get; set; } = new();
+
+        [XmlElement("BreathinessPoints")]
+        public List<PitchPoint> BreathinessPoints { get; set; } = new();
     }
 
 }
