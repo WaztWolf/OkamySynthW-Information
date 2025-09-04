@@ -20,13 +20,15 @@ namespace OkamySynthW.Models
         public bool ProtectedPhonemeMode { get; set; } = false;
         public bool vibratoEnabled { get; set; } = false;
         public bool vibratoCrescendo { get; set; } = false;
-        public double vibratoCrescendoFinal { get; set; } = 0;
+        public double vibratoCrescendoFinal { get; set; } = 0.2; // 0.2 de la nota
         public bool vibratoDecrescendo { get; set; } = false;
-        public double vibratoDecrescendoStart { get; set; } = 0; 
+        public double vibratoDecrescendoStart { get; set; } = 0.8; // 0.8 de la nota
         public double VibratoDepth { get; set; }
         public double VibratoFrequency { get; set; }
         public double VibratoStartTime { get; set; } = 0; //inicio de la nota
         public double VibratoEndTime { get; set; } = 1;   //final de la nota
+        public bool vibratoRandomness { get; set; } = false; //aleatoriedad 
+        public double VibratoRandomnessAmount { get; set; } = 0.000; // MAX = 1x, 5050 = 0.500x, MIN = 0.000x
         public enum VibratoWaveType { Sine, Triangle, Square, Saw }
         public VibratoWaveType VibratoWave { get; set; } = VibratoWaveType.Sine;
         public double NoteIndex { get; set; } = 1;
@@ -34,8 +36,11 @@ namespace OkamySynthW.Models
         public double DurationTick { get; set; }
         public double EndTick { get; set; } 
         public List<SerializablePoint> PitchPointsVisual { get; set; } = new();
-        public List<SerializablePoint> GenderCurve { get; set; } = new();
-        public List<SerializablePoint> BreathinessCurve { get; set; } = new();
-        public List<SerializablePoint> GrowlCurve { get; set; } = new();
+    }
+
+    [Serializable]
+    public class Notes
+    {
+        public List<NoteData> NoteList { get; set; } = new List<NoteData>(); // Lista de notas
     }
 }
