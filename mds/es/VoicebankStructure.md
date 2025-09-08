@@ -164,9 +164,9 @@ Sirve para re-segmentar mejor y encontrar la parte más estable de la vocal.
 | ovoice.cfg | Archivo principal “cerebro” |
 | dictionary.dict | Definición de fonemas y secciones |
 | phmn_data.csv | Índice fonema → archivo CSV |
-| .otrans | Transcripción por muestra |
-| .osegment | Segmentación temporal por fonema |
-| phonetics_folder | CSV de ocurrencias/características |
+| .otrans | Transcripción de audio temporal |
+| .osegment | Segmentación de audio temporal |
+| phonetics_folder | CSV de de la fonetica |
 | AVE | Voice Colors, Vocal Modes, Appened Voice Expression |
 | OE | Okamy Extended, identifica extensiones del banco de voz |
 
