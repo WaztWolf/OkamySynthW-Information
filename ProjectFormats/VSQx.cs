@@ -181,9 +181,14 @@ namespace OkamySynthW.ProjectFormats
                 string newPhnm = MappingEngine.Transcribe(lyric); // actualiza los fonemas
                 bool protectedPhoneme = false; // proteccion del fonema inicial, falso
                 string? lockedMode = noteNode["p"]?.Attributes?["lock"]?.Value; // consigue el lock
+                string actualPhonemes = "";
                 if (lockedMode == "1") // si lock=1(proteccion del fonema activado)
                 {
                     protectedPhoneme = true; // se activa la proteccion del fonema
+                    actualPhonemes = phoneme;
+                } else {
+                    protectedPhoneme = false;
+                    actualPhonemes = newPhnm;
                 }
                 // Deteccion de texto en los diferentes lenguajes japoneses:
                 // Hiragana: U+3040 a U+309F
@@ -230,7 +235,8 @@ namespace OkamySynthW.ProjectFormats
                     Height = NoteHeight,
                     Color = "#DD0000",
                     Lyric = lyric,
-                    transcription = newPhnm,
+                    transcription = actualPhonemes,
+                    ProtectedPhonemeMode = protectedPhoneme,
                     Pitch = n,
                     NoteIndex = projectData.Notes.Count,
                 };
