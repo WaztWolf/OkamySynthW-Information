@@ -8,6 +8,8 @@ namespace OkamySynthW.Models
         public string Description { get; set; } = string.Empty;
         public string Dictionary { get; set; } = string.Empty;
         public string DictionaryPath { get; set; } = string.Empty;
+        public bool isAtPtchAllowed { get; set; } = False;
+        public string AtPtchFile { get; set; } string.Empty;
         public string Samples { get; set; } = string.Empty;
         public string PitchData { get; set; } = string.Empty;
         public string ImgSample { get; set; } = string.Empty;
