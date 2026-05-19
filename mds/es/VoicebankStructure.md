@@ -101,7 +101,7 @@ o,B3,246.50,samples/hola.wav,0.120,0.380
 l,A3,220.10,samples/hola.wav,0.380,0.470
 a,C4,261.60,samples/hola.wav,0.470,0.720
 ```
-
+¡Dentro del csv cuando se completa el voicebank la columna "fonema" desaparece!
 ---
 
 ### 3.5 `phonetics_folder/`
